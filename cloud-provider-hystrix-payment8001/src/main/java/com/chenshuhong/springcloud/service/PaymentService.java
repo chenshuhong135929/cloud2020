@@ -6,7 +6,6 @@ import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 
-import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -26,6 +25,12 @@ public class PaymentService
         return "线程池:  "+Thread.currentThread().getName()+"  paymentInfo_OK,id:  "+id+"\t"+"O(∩_∩)O哈哈~";
     }
 
+    /**
+     * fallbackMethod :出现不能正常访问，返回的方法
+     * HystrixProperty ：定义规则，例子是请求超时5000进行返回默认数据
+     * @param id
+     * @return
+     */
     @HystrixCommand(fallbackMethod = "paymentInfo_TimeOutHandler",commandProperties = {
             @HystrixProperty(name="execution.isolation.thread.timeoutInMilliseconds",value="5000")
     })
