@@ -28,6 +28,10 @@ eureka:
       defaultZone: http://localhost:7001/eureka
 
 ##rabbitmq相关配置,暴露bus刷新配置的端点
+# 通知全部订阅刷新
+# 请求地址 http://localhost:3344/actuator/bus-refresh
+# 通知指定订阅刷新  示例  刷新 3355       微服务名称（config-client）+（端口号）
+# http://localhost:3344/actuator/bus-refresh/config-client:3355
 management:
   endpoints: #暴露bus刷新配置的端点
     web:
