@@ -1,0 +1,44 @@
+2020-04-08 16:10:00,785 INFO DEFAULT_GROUP@@nacos-payment-provider {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.17:9001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-08 16:10:00,789 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,
+
+2020-04-08 16:10:00,793 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,
+
+2020-04-08 16:14:05,805 INFO {POS} {IP-DISABLED} valid: 192.168.2.17:9001@DEFAULT@DEFAULT_GROUP@@nacos-payment-provider, region: unknown, msg: client timeout after 15000, last beat: 1586333626216
+
+2020-04-08 16:14:22,612 INFO DEFAULT_GROUP@@nacos-payment-provider {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.2.17:9001:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2020-04-08 16:14:22,612 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 
+
+2020-04-08 16:19:16,985 INFO DEFAULT_GROUP@@nacos-payment-provider {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.17:9001:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-08 16:19:16,985 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,
+
+2020-04-08 16:19:16,985 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,
+
+2020-04-08 16:20:21,594 INFO DEFAULT_GROUP@@nacos-payment-provider {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.17:9002:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-08 16:20:21,598 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,192.168.2.17:9002_true,
+
+2020-04-08 16:20:21,600 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 192.168.2.17:9001_true,192.168.2.17:9002_true,
+
+2020-04-08 16:24:35,714 INFO DEFAULT_GROUP@@nacos-order-consumer {SYNC} {IP-NEW} cluster: DEFAULT, new ips size: 1, content: [192.168.2.17:83:unknown:DEFAULT_1.0_true_false_DEFAULT]
+
+2020-04-08 16:24:35,714 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-order-consumer, ips: 192.168.2.17:83_true,
+
+2020-04-08 16:24:35,717 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-order-consumer, ips: 192.168.2.17:83_true,
+
+2020-04-08 17:21:49,624 INFO {POS} {IP-DISABLED} valid: 192.168.2.17:9001@DEFAULT@DEFAULT_GROUP@@nacos-payment-provider, region: unknown, msg: client timeout after 15000, last beat: 1586337694168
+
+2020-04-08 17:21:49,624 INFO {POS} {IP-DISABLED} valid: 192.168.2.17:9002@DEFAULT@DEFAULT_GROUP@@nacos-payment-provider, region: unknown, msg: client timeout after 15000, last beat: 1586337693070
+
+2020-04-08 17:21:51,284 INFO {POS} {IP-DISABLED} valid: 192.168.2.17:83@DEFAULT@DEFAULT_GROUP@@nacos-order-consumer, region: unknown, msg: client timeout after 15000, last beat: 1586337691975
+
+2020-04-08 17:22:04,647 INFO DEFAULT_GROUP@@nacos-payment-provider {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 2, content: [192.168.2.17:9001:unknown:DEFAULT_1.0_false_false_DEFAULT, 192.168.2.17:9002:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2020-04-08 17:22:04,647 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-payment-provider, ips: 
+
+2020-04-08 17:22:06,326 INFO DEFAULT_GROUP@@nacos-order-consumer {SYNC} {IP-DEAD} cluster: DEFAULT, dead ips size: 1, content: [192.168.2.17:83:unknown:DEFAULT_1.0_false_false_DEFAULT]
+
+2020-04-08 17:22:06,326 INFO [IP-UPDATED] namespace: public, service: DEFAULT_GROUP@@nacos-order-consumer, ips: 
+
