@@ -76,4 +76,18 @@ nacos 启动
 ./startup.sh -p 3333
 ./startup.sh -p 4444
 ./startup.sh -p 5555
+
+查看开启的应用数量
 ps -ef|grep nacos|grep -v grep|wc -l
+
+关闭
+./shutdown.sh
+
+===========================================
+Sentinel（新提No）
+下载地址
+https://github.com/alibaba/Sentinel/releases/
+
+java -jar Sentinel.jar  
+
+登陆  用户密码都是（sentinel）
