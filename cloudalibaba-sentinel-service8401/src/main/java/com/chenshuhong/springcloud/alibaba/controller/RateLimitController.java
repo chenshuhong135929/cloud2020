@@ -21,6 +21,12 @@ public class RateLimitController
     {
         return new CommonResult(200,"按资源名称限流测试OK",new Payment(2020L,"serial001"));
     }
+
+    /**
+     * 自定义返回的服务信息
+     * @param exception
+     * @return
+     */
     public CommonResult handleException(BlockException exception)
     {
         return new CommonResult(444,exception.getClass().getCanonicalName()+"\t 服务不可用");
@@ -33,7 +39,10 @@ public class RateLimitController
         return new CommonResult(200,"按url限流测试OK",new Payment(2020L,"serial002"));
     }
 
-
+    /**
+     * 出现错误，到CustomerBlockHandler里面找对应的方法进行访问
+     * @return
+     */
     @GetMapping("/rateLimit/customerBlockHandler")
     @SentinelResource(value = "customerBlockHandler",
             blockHandlerClass = CustomerBlockHandler.class,
