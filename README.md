@@ -28,7 +28,10 @@ hostname -i
 172.18.47.1:3333
 172.18.47.1:4444
 172.18.47.1:5555
+
+
 nginx  配置nginx.conf
+=====================================================
 worker_processes  1;
 
 #error_log  logs/error.log;
@@ -91,3 +94,18 @@ https://github.com/alibaba/Sentinel/releases/
 java -jar Sentinel.jar  
 
 登陆  用户密码都是（sentinel）
+
+===========================================
+Seata 分布式事务解决方案
+下载seata-server.zar.gz
+进入到conf目录修改
+ （名称可以随便起：这里例子为“fsp_tx_group”）
+ vgroup_mapping.my_test_tx_group = "fsp_tx_group"
+ （修改存储问数据库）
+  mode = "db"
+修改registry.conf
+type = "nacos"
+===============================================
+docker 启动 seata
+ docker run -d  --name seata-server -p 8091:8091 -v /usr/dockerData/nacos/seata-config/registry.conf:/resources/registry.conf  -v  /usr/dockerData/nacos/seata-config/file.conf:/resources/file.conf  seataio/seata-server:latest
+
