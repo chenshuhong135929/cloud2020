@@ -102,11 +102,23 @@ java -jar Sentinel.jar
 Seata 分布式事务解决方案   
 
 1，以文件形式启动：
-（seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
 下载seata-server.zar.gz
 解压
 tar -zxvf  seata-server.zar.gz
 修改配置文件  registry.conf  , file.conf
+
+支持的启动参数
+参数	全写	作用	备注
+-h	--host	指定在注册中心注册的 IP	不指定时获取当前的 IP，外部访问部署在云环境和容器中的 server 建议指定
+-p	--port	指定 server 启动的端口	默认为 8091
+-m	--storeMode	事务日志存储方式	支持file和db，默认为 file
+-n	--serverNode	用于指定seata-server节点ID	,如 1,2,3..., 默认为 1
+-e	--seataEnv	指定 seata-server 运行环境	如 dev, test 等, 服务启动时会使用 registry-dev.conf 这样的配置
+
+如：
+
+$ sh ./bin/seata-server.sh -p 8091 -h  47.112.186.155 -m file
+
 ===============================================
 
 docker run --name seata-service --rm -p 8091:8091 -d \
