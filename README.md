@@ -98,8 +98,8 @@ java -jar Sentinel.jar
 
 
 
-
-Seata 分布式事务解决方案    （seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
+================================
+seata 分布式事务解决方案    （seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
 下载seata-server.zar.gz
 进入到conf目录修改
  （名称可以随便起：这里例子为“fsp_tx_group”）
