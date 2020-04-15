@@ -12,6 +12,8 @@ spring:
     nacos:
       discovery:
         server-addr: 47.112.186.155:8080
+        # 配置调用的外网ip
+        ip: 192.168.12.17
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://47.112.186.155:3306/seata_order
