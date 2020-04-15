@@ -22,7 +22,7 @@ linux环境下安装nacos
 解压
 tar -zxvf  nacos-server-1.1.4.tar.gz 
 
-linux环境能够识别的ip
+linux环境能够识别的ip  (如果nacos跟seata在同一台服务器需要注意seata注册ip需要修改到/etc/hosts文件  ，会改到hostname -i查询出来的ip值）可以使用  ip  a    命令查找到 eth0   对应的ip进行配置
 hostname -i 
 修改cluster.conf 文件搭建集群
 172.18.47.1:3333
@@ -96,7 +96,7 @@ java -jar Sentinel.jar
 登陆  用户密码都是（sentinel）
 
 ===========================================
-Seata 分布式事务解决方案
+Seata 分布式事务解决方案    （seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
 下载seata-server.zar.gz
 进入到conf目录修改
  （名称可以随便起：这里例子为“fsp_tx_group”）
