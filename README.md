@@ -22,7 +22,7 @@ linux环境下安装nacos
 解压
 tar -zxvf  nacos-server-1.1.4.tar.gz 
 
-linux环境能够识别的ip  (如果nacos跟seata在同一台服务器需要注意seata注册ip需要修改到/etc/hosts文件  ，会改到hostname -i查询出来的ip值）可以使用  ip  a    命令查找到 eth0   对应的ip进行配置
+linux环境能够识别的ip  
 hostname -i 
 修改cluster.conf 文件搭建集群
 172.18.47.1:3333
@@ -99,16 +99,30 @@ java -jar Sentinel.jar
 
 
 ================================
-seata 分布式事务解决方案    （seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
+Seata 分布式事务解决方案   
+
+1，以文件形式启动：
+（seata 配置需要修改/etc/hosts文件  添加 : (外网ip  本机名称可以使用（hostname）命令进行查找)  （例子： 47.112.186.155  iZwz9iase9sbnjbak0cpszZ） 本机名称可以使用（hostname）命令进行查找
 下载seata-server.zar.gz
-进入到conf目录修改
- （名称可以随便起：这里例子为“fsp_tx_group”）
- vgroup_mapping.my_test_tx_group = "fsp_tx_group"
- （修改存储问数据库）
-  mode = "db"
-修改registry.conf
-type = "nacos"
+解压
+tar -zxvf  seata-server.zar.gz
+修改配置文件  registry.conf  , file.conf
 ===============================================
-docker 启动 seata
- docker run -d  --name seata-server -p 8091:8091 -v /usr/dockerData/nacos/seata-config/registry.conf:/resources/registry.conf  -v  /usr/dockerData/nacos/seata-config/file.conf:/resources/file.conf  seataio/seata-server:latest
+
+docker run --name seata-service --rm -p 8091:8091 -d \
+	-e SEATA_IP=47.112.186.155 \
+	-e SEATA_CONFIG_NAME=file:/root/seata-config/registry \
+	-v /root/alibaba/seata-config/resources/:/root/seata-config \
+	-v /root/alibaba/seata-config/log/:/root/logs/  \
+          seataio/seata-server:latest
+       
+语义解析
+
+    -e SEATA_IP=你自己的服务器IP地址 设置IP，使用注册中心时有效
+    -e SEATA_CONFIG_NAME=file:/root/seata-config/registry 设置文件映射为容器中的指定目录，registry.conf 为注册文件
+    -v /root/alibaba/seata-config/resources/:/root/seata-config 映射当前系统seata-config 下的resources 目录为seata-config
+    -v /root/alibaba/seata-config/log/:/root/logs/映射当前系统seata-config 下的log 目录为 日志信息
+
+
+将配置文件拷贝到 /root/alibaba/seata-config/resources  目录下（registry.conf  file.conf  ）
 
