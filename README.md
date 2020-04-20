@@ -93,6 +93,9 @@ https://github.com/alibaba/Sentinel/releases/
 
 java -jar Sentinel.jar  
 
+docker 启动
+docker run --name elvis.sentinel -d  -p 8858:8858 bladex/sentinel-dashboard
+
 登陆  用户密码都是（sentinel）
 
 
