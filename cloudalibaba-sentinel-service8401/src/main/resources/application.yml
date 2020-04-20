@@ -10,7 +10,7 @@ spring:
         server-addr: 47.112.186.155:8080/ #Nacos服务注册中心地址
     sentinel:
       transport:
-        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        dashboard: 47.112.186.155:8085 #配置Sentinel dashboard地址
         port: 8719
       datasource:
         ds1:
